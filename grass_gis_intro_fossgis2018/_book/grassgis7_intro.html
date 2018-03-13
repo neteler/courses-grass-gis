@@ -1,0 +1,587 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3) Introduction to GRASS GIS 7 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="raster_intro.html" />
+    
+    
+    <link rel="prev" href="first_steps.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Starting Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Info.html">
+            
+                <a href="Info.html">
+            
+                    
+                    Information about the course
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="short_guide.html">
+            
+                <a href="short_guide.html">
+            
+                    
+                    1) Short Guide to  GRASS GIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="first_steps.html">
+            
+                <a href="first_steps.html">
+            
+                    
+                    2) First Steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="grassgis7_intro.html">
+            
+                <a href="grassgis7_intro.html">
+            
+                    
+                    3) Introduction to GRASS GIS 7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="raster_intro.html">
+            
+                <a href="raster_intro.html">
+            
+                    
+                    4) GRASS GIS 7 raster intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="vector_data.html">
+            
+                <a href="vector_data.html">
+            
+                    
+                    5) GRASS GIS 7 vector data
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >3) Introduction to GRASS GIS 7</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="grass-gis-7-intro">GRASS GIS 7 intro</h1>
+<p><img style="float: right;" src="image/grass_symbol.png" width="100"></p>
+<h3 id="session-objectives">Session Objectives</h3>
+<ul>
+<li>Database structure of GRASS GIS</li>
+<li>About the course data set</li>
+<li>First steps in using GRASS GIS 7<ul>
+<li>the graphical user interface (GUI)<ul>
+<li>displaying raster and vector maps</li>
+<li>querying maps</li>
+<li>adding map elements</li>
+<li>bmap swiping with two different Landsat coverages</li>
+<li>bivariate scatterplots</li>
+</ul>
+</li>
+<li>GRASS GIS command structure<ul>
+<li>command line or GUI?</li>
+</ul>
+</li>
+<li>Creating a perspective view</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="grass-gis-database-concept">GRASS GIS Database concept:</h2>
+<p><img src="image/db.png" alt="db"></p>
+<hr>
+<h3 id="graphical-view">graphical view:</h3>
+<p><img src="image/db_graphic.png" alt="db2"></p>
+<p>&#x2026; effectively a tree of subdirectories.</p>
+<p>GRASS GIS is a multi-user system when storing &#x201C;<strong>grassdata</strong>&#x201D; on a network drive.
+Users can share &#x201C;<strong>locations</strong>&#x201D; and manage therein own &#x201C;<strong>mapsets</strong>&#x201C; for the data.</p>
+<p>GRASS GIS will do the file management for you!</p>
+<hr>
+<h4 id="standard-gis-formats-versus-grass-7-database">Standard GIS formats versus GRASS 7 Database</h4>
+<table>
+<thead>
+<tr>
+<th><img src="image/dbl.png" alt="db"></th>
+<th><img src="image/dbr.png" alt="db"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data in <strong>standard GIS</strong> formats.</td>
+<td>Data in <strong>GRASS GIS</strong> formats.</td>
+</tr>
+<tr>
+<td>Store in directory:</td>
+<td>Store in directory:</td>
+</tr>
+<tr>
+<td>/home/user/<strong>gisdata</strong>/</td>
+<td>/home/user/<strong>grassdata</strong>/</td>
+</tr>
+<tr>
+<td>or a shared network directory</td>
+<td>or a shared network directory</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exercise---grass-startup-and-first-steps"><span style="color:red"><em>Exercise</em></span> - GRASS startup and first steps</h2>
+<p><img src="image/startup.png" alt="startup">
+<img src="image/gui.png" alt="gui"></p>
+<hr>
+<h3 id="displaying-raster-and-vector-maps">Displaying raster and vector maps</h3>
+<p>A) Using the <strong>menu</strong>
+<img src="image/menu.png" alt="menu"></p>
+<p>B) Using the <strong>icons</strong>
+<img src="image/display.png" alt="display"></p>
+<hr>
+<h3 id="display-the-roadsmajor-vector-map">Display the &#x201C;roadsmajor&#x201D; vector map</h3>
+<ul>
+<li>Load the &#x201C;roadsmajor&#x201D; vector map into the canvas, zoom to map if needed:
+<img src="image/dispvec.png" alt="dispvec">
+<img src="image/toolbar.png" alt="toolbar"></li>
+</ul>
+<hr>
+<h3 id="show-vector-map-attributes">Show vector map attributes</h3>
+<p>Open the attribute table of the &#x201C;<strong>roadsmajor</strong>&#x201D; vector map by</p>
+<ul>
+<li>&#x2026; either right-mouse clicking in layer tree on map name</li>
+<li>&#x2026; or using the related &#x201C;Show Attribute table&#x201D; icon
+<img src="image/attribute.png" alt="attribute"></li>
+</ul>
+<hr>
+<h3 id="sql-queries-of-attributes">SQL queries of attributes</h3>
+<p>Select the <strong>single lane roads</strong> in the &#x201C;<strong>roadsmajor</strong>&#x201D; vector map</p>
+<ul>
+<li>Use &#x201C;Simple&#x201D; SQL query</li>
+<li>The selected vectors will be highlighted in the map display
+<img src="image/sql.png" alt="sql"></li>
+</ul>
+<h3 id="adding-map-elements">Adding map elements</h3>
+<p><img src="image/addmap.png" alt="addmap"></p>
+<hr>
+<h3 id="modify-element-settings-and-position">Modify element settings and position</h3>
+<p>Using the Wake county &#x201C;<strong>elevation</strong>&#x201D; and &#x201C;<strong>roadsmajor</strong>&#x201D; maps:</p>
+<p><img src="image/pointer.png" alt="pointer"></p>
+<p>Use <strong>pointer</strong> to</p>
+<ul>
+<li>move map elements</li>
+<li>edit element settings with  a click</li>
+</ul>
+<hr>
+<h3 id="map-histogram-tool">Map histogram tool</h3>
+<p><img src="image/histo.png" alt="histo"></p>
+<hr>
+<h3 id="adding-a-lat-long-grid-to-the-map">Adding a Lat-Long grid to the map</h3>
+<p>Using the NC state &#x201C;<strong>elev_state_500m</strong>&#x201D; map:
+<img src="image/latlong.png" alt="latlong">
+<strong>Select a grid size in grid unts (here: LL &#x2013; 1 deg)    &#x2192;     Draw grid as LatLong WGS84 grid</strong></p>
+<p><img src="image/latlong_img.png" alt="latlong_img"></p>
+<hr>
+<h3 id="map-swiping-for-multitemporal-maps">Map swiping for multitemporal maps</h3>
+<p>Load the LANDSAT 5 (1987) and 7 (2002) <strong>RGB composites</strong> of Wake county:
+<img src="image/rgb.png" alt="rgb"></p>
+<h3 id="convenient-map-selector">Convenient map selector</h3>
+<p>Load the LANDSAT <strong>channels red and green</strong> using the convenient map selector
+<img src="image/mapselector.png" alt="mapselector"></p>
+<hr>
+<h3 id="bivariate-scatterplots">Bivariate Scatterplots</h3>
+<p>Load the LANDSAT 7 2002 channels 1 and 3 of Wake county.
+<img src="image/biva.png" alt="biva"></p>
+<hr>
+<hr>
+<h2 id="overview-grass-gis-command-structure"><span style="color:red"><em>Overview</em></span>: GRASS GIS command structure</h2>
+<p><img src="image/overview.png" alt="overview"></p>
+<p><span style="color:green"><em>Ninja Trick</em></span>, type the desired prefix (e.g. v.) and then <tab><tab> to complete the command name</tab></tab></p>
+<hr>
+<h3 id="grass-startup-and-first-steps">GRASS startup and first steps</h3>
+<p><strong>Know where you are...</strong></p>
+<p>get projection information for the North Carolina Location</p>
+<p>command: <code>g.proj</code></p>
+<pre><code>    wxGUI: Settings &#x2192; Map projections &#x2192; Manage projections
+</code></pre><p><img src="image/wxgui.png" alt="wxgui">
+<img style="float: right;" src="image/gproj.png" width="200"></p>
+<p>get projection information for the North Carolina sample data set:</p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name       :</td>
+<td>Lambert Conformal Conic</td>
+<td>Projection name</td>
+</tr>
+<tr>
+<td>proj       :</td>
+<td>lcc</td>
+<td>projection</td>
+</tr>
+<tr>
+<td>datum      :</td>
+<td>nad83</td>
+<td>geodetic datum</td>
+</tr>
+<tr>
+<td>a          :</td>
+<td>6378137.0</td>
+<td>ellipsoid GR80</td>
+</tr>
+<tr>
+<td>es         :</td>
+<td>0.006694380022900787</td>
+<td>ellipsoid GR80</td>
+</tr>
+<tr>
+<td>lat_1      :</td>
+<td>36.16666666666666</td>
+<td>standard parallels</td>
+</tr>
+<tr>
+<td>lat_2      :</td>
+<td>34.33333333333334</td>
+<td>standard parallels</td>
+</tr>
+<tr>
+<td>lat_0      :</td>
+<td>33.75</td>
+<td>reference latitude</td>
+</tr>
+<tr>
+<td>lon_0      :</td>
+<td>-79</td>
+<td>reference longitude</td>
+</tr>
+<tr>
+<td>x_0        :</td>
+<td>609601.22</td>
+<td>} lon and lat shifts...</td>
+</tr>
+<tr>
+<td>y_0        :</td>
+<td>0</td>
+<td>...(false easting/northing)</td>
+</tr>
+<tr>
+<td>units      :</td>
+<td>meters</td>
+<td>unit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grass-database-concept---projection">GRASS Database concept - Projection</h2>
+<p>Projection of the North Carolina Location:</p>
+<ul>
+<li><strong>NAD83(HARN) / North Carolina &#x2013; EPSG code: 3358</strong>
+<img src="image/projection.png" alt="projection"></li>
+</ul>
+<p>+proj=lcc</p>
+<p>+lat_1=36.16666666666666 +lat_2=34.33333333333334 </p>
+<p>+lat_0=33.75 +lon_0=-79</p>
+<p>+x_0=609601.22 +y_0=0</p>
+<p>+ellps=GRS80 +units=m +no_defs</p>
+<hr>
+<h3 id="graphical-user-interface-versus-command-line">Graphical user interface versus Command line</h3>
+<ul>
+<li>GRASS GIS offers a graphical user interface</li>
+</ul>
+<ul>
+<li><p>On command line, there is (text) help:</p>
+<pre><code>  r.univar --help
+</code></pre></li>
+</ul>
+<ul>
+<li>There are flags (e.g. -g ) and parameters (e.g. map= )</li>
+</ul>
+<ul>
+<li><p>From command line, you can open the module&apos;s GUI (just call the command without parameters)</p>
+<pre><code>  r.univar --ui
+</code></pre></li>
+<li><p>&#x2026; or generate a Python script template</p>
+<pre><code> r.univar --script
+</code></pre></li>
+</ul>
+<p><strong>STYLE</strong>: Menu: Settings &#x2192; GUI Settings &#x2192; Appearance &#x2192; Module dialog style: Basic top/left
+<img src="image/guivs.png" alt="guivs">
+The graphical user interface effectively generates the respective command for the command line (and also writes to the shell &#x201C;history&#x201D;)</p>
+<hr>
+<h4 id="command-line-at-its-best">Command line at its best</h4>
+<p><strong>Advantages of the command line</strong></p>
+<p><img style="float: right;" src="image/cmdl.png" width="400"></p>
+<ul>
+<li><p>Run &#x201C;history&#x201D; to see all your previous commands, &#x201C;forever&#x201D;</p>
+</li>
+<li><p>History is stored individually per MAPSET (note that the history of each map is stored within the map&apos;s metadata, for this use r|r3|v.info)</p>
+</li>
+<li><p>Search in history with CTRL-R</p>
+</li>
+<li><p>Save it to a file:</p>
+</li>
+</ul>
+<p><code>history &gt; my_protocol.sh</code> </p>
+<p><img style="float: right;" src="image/script.png" width="350"></p>
+<ul>
+<li>Note for Windows users: no history command but
+<code>&#x201C;Command console&#x201D; tab &#x2192; &#x201C;Log file&#x201D;</code> </li>
+<li><p>Polish protocol file, use &#x201C;# comment&#x201D; to annotate it</p>
+</li>
+<li><p>Rerun such a protocol file in a later GRASS GIS session with </p>
+</li>
+</ul>
+<p><code>sh my_protocol.sh</code></p>
+<p>Note: a simplified command line is included in the graphical user interface, tab &#x201C;Command console&#x201D;.</p>
+<p>It offers a &#x201C;Command prompt protocol&#x201D; button.</p>
+<ul>
+<li>These script will work for decades...</li>
+</ul>
+<hr>
+<h2 id="exercise-perspective-view"><span style="color:red"><em>Exercise</em></span> Perspective view</h2>
+<p>Load the Wake county &#x201C;elevation&#x201D; map (this tool requires OpenGL support):</p>
+<p><img src="image/perspective.png" alt="perspective"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="first_steps.html" class="navigation navigation-prev " aria-label="Previous page: 2) First Steps">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="raster_intro.html" class="navigation navigation-next " aria-label="Next page: 4) GRASS GIS 7 raster intro">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3) Introduction to GRASS GIS 7","level":"1.5","depth":1,"next":{"title":"4) GRASS GIS 7 raster intro","level":"1.6","depth":1,"path":"raster_intro.md","ref":"raster_intro.md","articles":[]},"previous":{"title":"2) First Steps","level":"1.4","depth":1,"path":"first_steps.md","ref":"first_steps.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"grassgis7_intro.md","mtime":"2018-03-13T10:53:28.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-13T11:01:00.469Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
